@@ -483,4 +483,9 @@ body {
   .letter {
     font-size: 1.5rem;
   }
+
+  .shape-1 {
+    display: none;
+  }
 }
+
