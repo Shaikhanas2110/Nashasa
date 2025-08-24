@@ -1,0 +1,486 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  /* Changed background from black to white and text from white to black */
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Pattern Background */
+.animated-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.pattern-grid {
+  width: 100%;
+  height: 100%;
+  /* Changed pattern lines from white to black */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: pattern-move 20s linear infinite;
+}
+
+@keyframes pattern-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Geometric Shapes */
+.geometric-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.shape {
+  position: absolute;
+  /* Changed shape borders from white to black */
+  border: 1px solid #bbb5b5;
+  animation: rotate 15s linear infinite;
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  transform: rotate(45deg);
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 60px;
+  height: 60px;
+  top: 60%;
+  right: 15%;
+  border-radius: 50%;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 20%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation-delay: -10s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating Letters */
+.floating-letters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.letter {
+  position: absolute;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 2rem;
+  /* Changed floating letters from white to black */
+  color: #bbb5b5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.letter-1 {
+  top: 15%;
+  left: 5%;
+  animation-delay: 0s;
+}
+.letter-2 {
+  top: 25%;
+  right: 8%;
+  animation-delay: -1s;
+}
+.letter-3 {
+  top: 45%;
+  left: 3%;
+  animation-delay: -2s;
+}
+.letter-4 {
+  top: 65%;
+  right: 5%;
+  animation-delay: -3s;
+}
+.letter-5 {
+  top: 75%;
+  left: 8%;
+  animation-delay: -4s;
+}
+.letter-6 {
+  top: 35%;
+  right: 12%;
+  animation-delay: -5s;
+}
+.letter-7 {
+  top: 55%;
+  left: 12%;
+  animation-delay: -6s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* Main Content */
+.main-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.content-center {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Brand Section */
+.brand-section {
+  margin-bottom: 2rem;
+}
+
+.logo-container {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+  transition: transform 0.3s ease;
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.brand-logo {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.brand-glow {
+  position: absolute;
+  inset: 0;
+  /* Changed glow from white to black */
+  background: rgba(0, 0, 0, 0.1);
+  filter: blur(3rem);
+  transform: scale(0.8);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Message Section */
+.message-section {
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.coming-soon-title {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  animation: fade-in-up 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.coming-soon-description {
+  font-size: 1.125rem;
+  /* Changed description text color to dark gray */
+  color: #4b5563;
+  max-width: 28rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  animation: fade-in-up 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Signup Section */
+.signup-section {
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+  animation: fade-in-up 0.8s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 28rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.email-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  /* Changed input background and colors for white theme */
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  color: #000000;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.email-input:focus {
+  outline: none;
+  /* Changed focus border to black */
+  border-color: #000000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.email-input::placeholder {
+  /* Changed placeholder color for better contrast */
+  color: #333;
+}
+
+.notify-btn {
+  padding: 0.75rem 2rem;
+  /* Changed button colors - black background, white text */
+  background: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Montserrat";
+  font-weight: 100;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notify-btn:hover {
+  /* Changed hover state to dark gray */
+  background: #ffffff;
+  color: #333333;
+  transform: scale(1.00);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-note {
+  font-size: 0.875rem;
+  /* Changed note color for better contrast */
+  color: #6b7280;
+}
+
+/* Social Section */
+.social-section {
+  padding-top: 3rem;
+  animation: fade-in-up 0.8s ease-out 1s forwards;
+  opacity: 0;
+}
+
+.social-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  /* Changed social title color */
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.0);
+}
+
+.social-icon {
+  width: 3rem;
+  height: 3rem;
+  /* Changed social icon border color */
+  border: 1px solid #9ca3af;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  /* Changed hover border and background for white theme */
+  border-color: #ffffff;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  /* Changed icon color */
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover .icon {
+  /* Changed hover icon color to black */
+  color: #ffffff;
+}
+
+.social-handle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  /* Changed handle color */
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover .social-handle {
+  /* Changed hover handle color */
+  color: #ffffff;
+}
+
+/* Decorative Line */
+.decorative-line {
+  padding-top: 4rem;
+}
+
+.line {
+  width: 6rem;
+  height: 1px;
+  /* Changed decorative line gradient from white to black */
+  background: linear-gradient(to right, transparent, #000000, transparent);
+  margin: 0 auto;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.footer-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  /* Changed footer text color */
+  color: #9ca3af;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .brand-logo {
+    max-width: 500px;
+  }
+
+  .coming-soon-title {
+    font-size: 2.25rem;
+  }
+
+  .signup-form {
+    flex-direction: row;
+  }
+
+  .email-input {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    max-width: 300px;
+  }
+
+  .coming-soon-title {
+    font-size: 1.5rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .letter {
+    font-size: 1.5rem;
+  }
+}
