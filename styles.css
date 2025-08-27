@@ -6,10 +6,10 @@
 }
 
 body {
-  font-family: "Playfair Display", serif;
-  /* Changed background from black to white and text from white to black */
-  background: #000000;
-  color: #ffffff;
+  font-family: "Playfair Display", sans-serif;
+  /* Changed background from light gray back to pure white */
+  background: #ffffff;
+  color: #000000;
   overflow-x: hidden;
 }
 
@@ -62,7 +62,7 @@ body {
 .shape {
   position: absolute;
   /* Changed shape borders from white to black */
-  border: 1px solid #bbb5b5;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   animation: rotate 15s linear infinite;
 }
 
@@ -115,11 +115,11 @@ body {
 
 .letter {
   position: absolute;
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", sans-serif;
   font-weight: 800;
   font-size: 2rem;
   /* Changed floating letters from white to black */
-  color: #bbb5b5;
+  color: rgba(0, 0, 0, 0.1);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -218,7 +218,7 @@ body {
   /* Changed glow from white to black */
   background: rgba(0, 0, 0, 0.1);
   filter: blur(3rem);
-  transform: scale(0.8);
+  transform: scale(1.1);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -230,7 +230,7 @@ body {
 
 .coming-soon-title {
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   animation: fade-in-up 0.8s ease-out 0.4s forwards;
   opacity: 0;
@@ -267,8 +267,8 @@ body {
 .email-input {
   flex: 1;
   padding: 0.75rem 1rem;
-  /* Changed input background and colors for white theme */
-  background: #ffffff;
+  /* Updated input background to slightly off-white for subtle contrast on pure white background */
+  background: rgba(249, 250, 251, 0.9);
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   color: #000000;
@@ -286,18 +286,18 @@ body {
 
 .email-input::placeholder {
   /* Changed placeholder color for better contrast */
-  color: #333;
+  color: #9ca3af;
 }
 
 .notify-btn {
   padding: 0.75rem 2rem;
   /* Changed button colors - black background, white text */
-  background: #333333;
+  background: #000000;
   color: #ffffff;
   border: none;
   border-radius: 0.5rem;
-  font-family: "Montserrat";
-  font-weight: 100;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -305,10 +305,9 @@ body {
 
 .notify-btn:hover {
   /* Changed hover state to dark gray */
-  background: #ffffff;
-  color: #333333;
-  transform: scale(1.00);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  background: #374151;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .signup-note {
@@ -349,7 +348,7 @@ body {
 }
 
 .social-link:hover {
-  transform: scale(1.0);
+  transform: scale(1.1);
 }
 
 .social-icon {
@@ -366,7 +365,7 @@ body {
 
 .social-link:hover .social-icon {
   /* Changed hover border and background for white theme */
-  border-color: #ffffff;
+  border-color: #000000;
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -380,7 +379,7 @@ body {
 
 .social-link:hover .icon {
   /* Changed hover icon color to black */
-  color: #ffffff;
+  color: #000000;
 }
 
 .social-handle {
@@ -393,7 +392,7 @@ body {
 
 .social-link:hover .social-handle {
   /* Changed hover handle color */
-  color: #ffffff;
+  color: #4b5563;
 }
 
 /* Decorative Line */
@@ -483,9 +482,4 @@ body {
   .letter {
     font-size: 1.5rem;
   }
-
-  .shape-1 {
-    display: none;
-  }
 }
-
